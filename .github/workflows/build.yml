@@ -20,10 +20,15 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: freelabspace/nacos-backup:latest
+      - name: Build and push Docker image
+              uses: docker/build-push-action@v6
+              with:
+                context: .
+                file: ./Dockerfile
+                platforms: linux/amd64,linux/arm64
+                push: true
+                tags: |
+                  freelabspace/python-local:3.10
+                  freelabspace/python-local:latest
+                cache-from: type=gha
+                cache-to: type=gha,mode=max
