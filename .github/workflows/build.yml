@@ -6,6 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        torch-version: ["2.6.0"]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -31,7 +34,3 @@ jobs:
             freelabspace/python-local:3.10-torch${{ matrix.torch-version }}
           build-args: |
             TORCH_VERSION=${{ matrix.torch-version }}
-          # 定义不同的 torch 版本以便测试
-          matrix:
-            torch-version:
-              - "2.6.0"
