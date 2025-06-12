@@ -26,4 +26,12 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: freelabspace/python-local:3.10
+          tags: |
+            freelabspace/python-local:3.10
+            freelabspace/python-local:3.10-torch${{ matrix.torch-version }}
+          build-args: |
+            TORCH_VERSION=${{ matrix.torch-version }}
+          # 定义不同的 torch 版本以便测试
+          matrix:
+            torch-version:
+              - "2.6.0"
