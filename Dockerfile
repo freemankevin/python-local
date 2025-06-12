@@ -27,7 +27,7 @@ RUN pip install -qq --upgrade pip
 # 定义 torch 版本参数
 ARG TORCH_VERSION
 # 安装 torch
-RUN pip install -qq --no-cache-dir torch==${TORCH_VERSION} --index-url https://download.pytorch.org/whl/torch
+RUN pip install -qq --no-cache-dir torch==${TORCH_VERSION} 
 
 # 设置工作目录
 WORKDIR /home
