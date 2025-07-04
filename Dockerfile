@@ -9,6 +9,7 @@ RUN apt-get update -qq && \
         libgdal-dev \
         gdal-bin \
         libpq5 \
+        libgl1 \
         curl \
         g++ \
         libreoffice \
