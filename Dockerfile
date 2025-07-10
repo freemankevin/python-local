@@ -7,6 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -qq && \
     apt-get install -y -qq --no-install-recommends \
         libgdal-dev \
+        poppler-utils \
         gdal-bin \
         libpq5 \
         libgl1 \
