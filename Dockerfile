@@ -2,6 +2,8 @@
 ARG PYTHON_VERSION=3.10
 FROM python:${PYTHON_VERSION}-slim
 
+LABEL maintainer="https://github.com/freemankevin/python-local"
+
 # 设置非交互式环境和上海时区
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -qq && \
