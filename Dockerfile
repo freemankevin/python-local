@@ -8,6 +8,7 @@ LABEL maintainer="https://github.com/freemankevin/python-local"
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -qq && \
     apt-get install -y -qq --no-install-recommends \
+        fonts-noto-cjk \
         libgdal-dev \
         poppler-utils \
         gdal-bin \
