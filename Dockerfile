@@ -21,6 +21,9 @@ RUN apt-get update -qq && \
         iputils-ping \
         dnsutils \
         telnet \
+        xvfb \
+        libfuse2 \
+        libfontconfig1 \
         tzdata && \
     rm -rf /var/lib/apt/lists/* && \
     ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
