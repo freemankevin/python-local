@@ -24,6 +24,7 @@ RUN apt-get update -qq && \
         xvfb \
         libfuse2 \
         libfontconfig1 \
+        vim \
         tzdata && \
     rm -rf /var/lib/apt/lists/* && \
     ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
@@ -32,10 +33,10 @@ RUN apt-get update -qq && \
 # 升级 pip，使用默认 PyPI 源
 RUN pip install -qq --upgrade pip
 
-# 定义 torch 版本参数
-ARG TORCH_VERSION
-# 安装 torch
-RUN pip install -qq --no-cache-dir torch==${TORCH_VERSION} 
+# # 定义 torch 版本参数
+# ARG TORCH_VERSION
+# # 安装 torch
+# RUN pip install -qq --no-cache-dir torch==${TORCH_VERSION} 
 
 # 设置工作目录
 WORKDIR /home
