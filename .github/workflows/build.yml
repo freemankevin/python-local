@@ -31,5 +31,6 @@ jobs:
           push: true
           tags: |
             freelabspace/python-local:3.10
+            freelabspace/python-local:latest
           build-args: |
             TORCH_VERSION=${{ matrix.torch-version }}
