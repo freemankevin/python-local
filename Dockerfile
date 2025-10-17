@@ -47,13 +47,12 @@ RUN set -eux; \
         exit 1; \
     fi; \
     curl -sSL -o /tmp/wkhtmltox.deb "$WKHTMLTOPDF_URL" && \
-    dpkg -i /tmp/wkhtmltox.deb --force-depends || true && \
+    dpkg -i --force-depends /tmp/wkhtmltox.deb || true && \
     rm -f /tmp/wkhtmltox.deb && \
+    apt-get update -qq && \
     apt-get install -y -qq --no-install-recommends \
         fontconfig \
-        fonts-dejavu \
-        fonts-liberation \
-        xfonts-encodings && \
+        fonts-noto && \
     rm -rf /var/lib/apt/lists/*
 
 # 升级 pip，使用默认 PyPI 源
