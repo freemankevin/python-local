@@ -30,6 +30,7 @@ RUN apt-get update -qq && \
         tesseract-ocr-eng \
         tesseract-ocr-chi-sim \
         tesseract-ocr-chi-tra \
+        mdbtools \
         tzdata && \
     rm -rf /var/lib/apt/lists/* && \
     ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
